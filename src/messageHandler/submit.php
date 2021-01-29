@@ -14,7 +14,7 @@
 		fwrite($data_file, $text_to_write);
 		fclose($data_file);
 		fclose($IDsave);
-		header('Location: /anonchat.html');
+		header('Location: /anonchat.php');
 		
 	}
 	saveFile();
