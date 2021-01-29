@@ -13,7 +13,7 @@
 		fwrite($IDsave, $ID);
 		fwrite($data_file, $text_to_write);
 		fclose($data_file);
-		fclose($IDsave)
+		fclose($IDsave);
 		header('Location: /anonchat.html');
 		
 	}
