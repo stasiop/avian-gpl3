@@ -1,3 +1,4 @@
+
 <html>
         <head></head>
         <title>AnonChat</title>
@@ -23,19 +24,19 @@
                                             fwrite($IDsave, $ID);
                                             fwrite($data_file, $text_to_write);
                                             fclose($data_file);
-                                            header('Location: /anonchat.html');
+                                            header('Location: /anonchat.php');
                                             fwrite($IDsave, $ID);
                                           }
                                           $x = 0;
 
-                                          $UFID = file_get_contents("/src/messageHandler/id.txt");
-                                          serverID=(int) $UFID;
+                                          $UFID = file_get_contents("src/messageHandler/id.txt");
+                                          $serverID=(int) $UFID;
 
                                           if($UFID!=$x){
                                             $x=$UFID;
                                             saveFile();
                                           }
-                                          sleep(1)
+                                          sleep(1);
 
                                     }
 
