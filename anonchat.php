@@ -13,7 +13,7 @@
                                         //        $serverID = file_get_contents("src/messageHandler/id.txt");
                                         //        sleep(1);
                                         //}
-                                -->		
+                                -->
                                 	
                                 <script type="text/javascript">        
                                         
