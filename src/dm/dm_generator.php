@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION["DMnum"] = $_POST["DMnum"];
 if(!isset($_COOKIE["user"])) {
 	echo "YOU FOOL, YOUR COOKIE ISN'T SET";
 } else {
