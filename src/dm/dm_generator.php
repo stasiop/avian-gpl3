@@ -6,7 +6,7 @@ if(!isset($_COOKIE["user"])) {
  		echo "The file exists";
 	} else {
 		echo "doesn't";
-		$myfile = fopen("newfile.txt", "a+") or die("\nUnable to open file!");
+		$myfile = fopen($_COOKIE["user"] . ".txt", "a+") or die("\nUnable to open file!");
 		$txt = "DM SHIT\n";
 		fwrite($myfile, $txt);
 		$txt = "DM SHIT\n";
@@ -14,3 +14,5 @@ if(!isset($_COOKIE["user"])) {
 		fclose($myfile);
 	}
 }
+header ('Location: ' . $_COOKIE["user"] . ".txt"); 
+?>
