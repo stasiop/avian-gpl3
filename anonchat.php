@@ -1,5 +1,6 @@
 
 
+
 <html>
         <head></head>
         <title>AnonChat</title>
@@ -8,26 +9,7 @@
                         <link type="text/css" rel="stylesheet" href="Stylesheet.css">
                         <img class="direction" src="/src/images/anon chat neon.png" width="320" height="200">
                         <div class="textContainer">
-                                <?php      
-                                
-                                      
-                                      function saveFile(){
-                                        $IDstr = file_get_contents("src/messageHandler/id.txt");
-                                        $ID = (int) $IDstr;
-                                        $name = "Anon";
-                                        $ID++;
-                                        
-                                        $data_file = fopen("message.txt", "a+");
-                                        $IDsave = fopen("src/messageHandler/id.txt", "w+");
-                                        $message = $_POST["message"];
-                                        $text_to_write = $name . ": " . $message . "\n";
-                                        fwrite($IDsave, $ID);
-                                        fwrite($data_file, $text_to_write);
-                                        fclose($data_file);
-                                        header('Location: /anonchat.php');
-                                        fwrite($IDsave, $ID);
-                                       }
-                                ?>
+                               
                                 <?php
                                         $serverID = file_get_contents("src/messageHandler/id.txt");
                                 ?>			
@@ -39,8 +21,9 @@
                                         while(x){
                                                 if(serverId!=clientId){
                                                         clientId=serverId;
-                                                        saveFile();
+                                                        window.location.reload(true);
                                                 }
+                                                sleep(1);
                                         }
                                 </script>
 
@@ -85,3 +68,4 @@
         </body>
 
 </html>
+
