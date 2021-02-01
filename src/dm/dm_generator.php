@@ -7,9 +7,7 @@ if(!isset($_COOKIE["user"])) {
 	} else {
 		echo "doesn't";
 		$myfile = fopen($_COOKIE["user"] . ".txt", "a+") or die("\nUnable to open file!");
-		$txt = "DM SHIT\n";
-		fwrite($myfile, $txt);
-		$txt = "DM SHIT\n";
+		$txt = " ";
 		fwrite($myfile, $txt);
 		fclose($myfile);
 	}
