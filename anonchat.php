@@ -1,4 +1,3 @@
-
 <html>
         <head></head>
         <title>AnonChat</title>
@@ -13,32 +12,36 @@
                                         //        $serverID = file_get_contents("src/messageHandler/id.txt");
                                         //        sleep(1);
                                         //}
-                                -->
+                                -->		
                                 	
                                 <script type="text/javascript">        
-                                        
+                                        var serverID=0;
                                         var clientId=0;
                                         var x=true;
                                         function loadDoc() {
+                                                console.log("Loaded Document")
                                                 var xhttp = new XMLHttpRequest();
                                                 xhttp.onreadystatechange = function() {
                                                 if (this.readyState == 4 && this.status == 200) {
-                                                        $serverID = this.responseText;
+                                                        serverID = this.responseText;
+                                                        console.log(serverID)
                                                 }
                                                 };
                                                         xhttp.open("GET", "/src/messageHandler/id.txt", true);
                                                         xhttp.send();
                                                 }
                                         const task = async () => {
+                                                console.log("taskDone")
                                                 while(x) {
-                                                        loadDoc()
                                                         
                                                         await new Promise(r => setTimeout(r, 1000));
-                                                        if(clientId!=serverId){
+                                                        console.log("serverID "+serverID)
+                                                        console.log("clientID "+clientId)
+                                                        if(clientId!=serverID){
                                                         
                                                                 console.log("differentID")
-                                                                clientId=serverId;
-                                                                window.location.reload()
+                                                                clientId=serverID;
+                                                                loadDoc()
                                                                 
                                                         }else{
                                                                 console.log("sameID");
@@ -46,6 +49,7 @@
                                                         
                                                 };
                                         }
+                                        task()
                                         
                                 </script>                         
                                       <iframe id="GFG" src = "/src/messageHandler/message.txt" width = "100%" height = "100%"style="border: 0px">
@@ -75,4 +79,5 @@
         </body>
 
 </html>
+
 
