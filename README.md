@@ -1,4 +1,3 @@
-# avian-gpl3
-avian chat program under gpl3 not gpl2
+NO LONGER used, ok get it 
 <br>
-Don't worry, it still causes autism
+go to thttps://github.com/stasiop/avian
